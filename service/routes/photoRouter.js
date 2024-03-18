@@ -1,9 +1,8 @@
 const express = require('express');
 const multer = require('multer');
 const path = require("path");
+const { uploadPhoto } = require('../controllers/photoController');
 const photoRouter = express.Router();
-
-console.log(process.env.BASE_PHOTO_URL)
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -19,13 +18,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage });
 
-photoRouter.post("/", upload.single("image"), (req, res) => {
-  if (!req.file) {
-    return res.status(400).json({ error: "No file uploaded" });
-  }
-  const imageUrl = `${process.env.BASE_PHOTO_URL}/${req.file.filename}`;
-  res.json({ imageUrl });
-});
+photoRouter.post("/", upload.single("image"), uploadPhoto);
 
 
 module.exports = photoRouter;

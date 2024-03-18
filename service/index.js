@@ -1,8 +1,9 @@
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
 require("dotenv").config();
-const photoRouter = require('./routes/photoRouter');
-const { connectToDatabase } = require('./config/dbConfig');
+const photoRouter = require("./routes/photoRouter");
+const { connectToDatabase } = require("./config/dbConfig");
+const { deletePhotoAuto } = require("./cron");
 
 const app = express();
 connectToDatabase();
@@ -10,11 +11,13 @@ connectToDatabase();
 app.use("/uploads", express.static("uploads"));
 app.use(cors({ origin: "http://localhost:3000" }));
 
-app.use('/upload', photoRouter);
+app.use("/upload", photoRouter);
 
 app.get("/", (req, res) => {
-  res.json('ApI i working fine');
-})
+  res.json("ApI i working fine");
+});
+
+deletePhotoAuto();
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
