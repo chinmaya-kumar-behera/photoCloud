@@ -12,14 +12,18 @@ const uploadPhoto = async (req, res) => {
       }
       const { filename } = req.file;
 
+      console.log(new Date())
+
       console.log(Boolean(expirationTime));
 
       const newPhoto = new Images({
         imageUrl: `${process.env.BASE_PHOTO_URL}/${filename}`,
         imageName: filename,
-        expirationTime: expirationTime != 'NaN'
-          ? new Date(Date.now() + Number(expirationTime) * 60000)
-          : null,
+        expirationTime:
+          expirationTime != "NaN"
+            ? new Date(Date.now() + Number(expirationTime) * 60000)
+            : null,
+        duration: expirationTime != "NaN" ? expirationTime : null,
       });
 
       await newPhoto.save();

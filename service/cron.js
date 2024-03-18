@@ -2,26 +2,24 @@ const { deletePhotoHandler } = require("./controllers/photoController");
 const imageModel = require("./models/imageModel");
 
 const deletePhotoAuto = () => {
+  let minutes = 0;
   setInterval(async () => {
-    console.log("set interval");
-
     try {
-    //   const expiredPhotos = await imageModel.find({
-    //     expirationTime: { $lt: new Date() },
-        //   });
-        
-        const expiredPhotos = await imageModel.find({
-          expirationTime: { $lt: new Date() },
-          expirationTime: { $ne: null },
-        });
+      console.log("minute", minutes);
+      const expiredPhotos = await imageModel.find({
+        expirationTime: { $lt: new Date() },
+        // expirationTime: { $ne: null },
+      });
 
-
-      console.log(expiredPhotos);   
+        //   console.log(expiredPhotos);
+        expiredPhotos.forEach((ep) => console.log(ep.expirationTime > new Date()));
 
       expiredPhotos.forEach(async (ep) => {
         result = await deletePhotoHandler(ep._id);
         console.log("result", result);
       });
+
+      minutes++;
     } catch (error) {
       console.error("Error deleting expired photos:", error);
     }
