@@ -11,7 +11,7 @@ connectToDatabase();
 app.use("/uploads", express.static("uploads"));
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://photocloud.onrender.com/"],
+    origin: ["http://localhost:3000", "https://photocloud.vercel.app"],
   })
 );
 
