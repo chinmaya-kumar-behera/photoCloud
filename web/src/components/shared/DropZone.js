@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const DropZone = ({ onFileDrop }) => {
   const [isDragging, setIsDragging] = useState(false);
@@ -30,7 +31,12 @@ const DropZone = ({ onFileDrop }) => {
 
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
-    onFileDrop(file);
+    if (file && file.size > 1 * 1024 * 1024) {
+      toast.error("File size should be less than 10MB");
+      return
+    } else {
+      onFileDrop(file);
+    }
   };
 
   const fileInputRef = React.createRef();
@@ -73,7 +79,7 @@ const DropZone = ({ onFileDrop }) => {
         </h1>
         <p className="text-gray-500 text-sm lg:text-xl text-center">
           Drag and drop anywhere you want and start uploading your images now.
-          32 MB limit.
+          10 MB limit.
           <br /> Direct image links.
         </p>
       </div>
@@ -82,6 +88,3 @@ const DropZone = ({ onFileDrop }) => {
 };
 
 export default DropZone;
-
-
-
