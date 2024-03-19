@@ -9,7 +9,11 @@ const app = express();
 connectToDatabase();
 
 app.use("/uploads", express.static("uploads"));
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(
+  cors({
+    origin: ["http://localhost:3000", "https://photocloud.onrender.com/"],
+  })
+);
 
 app.use("/upload", photoRouter);
 
