@@ -8,11 +8,9 @@ const { deletePhotoAuto } = require("./cron");
 const app = express();
 connectToDatabase();
 
-console.log(process.env.WEB_BASE_URL);
-
 app.use(
   cors({
-    origin: "*",
+    origin: ["http://localhost:3000"],
   })
 );
   
