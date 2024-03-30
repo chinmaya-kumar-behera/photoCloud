@@ -11,7 +11,7 @@ connectToDatabase();
 app.use("/uploads", express.static("uploads"));
 app.use(
   cors({
-    origin:"*",
+    origin: [process.env.WEB_BASE_URL],
   })
 );
 
