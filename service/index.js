@@ -13,7 +13,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "https://photocloud.vercel.app",
-      "https://photo-cloud-git-main-chinmaya.vercel.app/",
+      "https://photo-cloud-git-main-chinmaya.vercel.app",
     ],
   })
 );
