@@ -11,11 +11,7 @@ connectToDatabase();
 app.use("/uploads", express.static("uploads"));
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://photocloud.vercel.app",
-      "https://photo-cloud-2j2lmfog9-chinmaya.vercel.app/",
-    ],
+    origin:"*",
   })
 );
 
