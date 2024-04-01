@@ -24,7 +24,7 @@ app.use("/uploads", express.static("uploads"));
 app.use("/upload", photoRouter);
 
 app.get("/", (req, res) => {
-  res.json("ApI i working fine");
+  res.json({ message: "ApI i working fine" });
 });
 
 deletePhotoAuto();
