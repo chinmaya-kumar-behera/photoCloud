@@ -8,15 +8,17 @@ const { deletePhotoAuto } = require("./cron");
 const app = express();
 connectToDatabase();
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "https://photocloud.vercel.app",
-      "https://photo-cloud-git-main-chinmaya.vercel.app",
-    ],
-  })
-);
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:3000",
+//       "https://photocloud.vercel.app",
+//       "https://photo-cloud-git-main-chinmaya.vercel.app",
+//     ],
+//   })
+// );
+
+app.use(cors({ origin: "*" }));
   
 app.use("/uploads", express.static("uploads"));
 app.use("/upload", photoRouter);
