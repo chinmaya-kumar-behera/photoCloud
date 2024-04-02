@@ -10,7 +10,7 @@ const app = express();
 connectToDatabase();
 
 app.use(express.json())
-app.use(cors({ origin: ["http://localhost:3000/"] }));
+app.use(cors({ origin: "*" }));
 
 const upload = multer();
 app.use(upload.any());
