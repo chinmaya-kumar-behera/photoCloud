@@ -19,10 +19,12 @@ const moment = require("moment-timezone");
 
 const imageSchema = mongoose.Schema(
   {
-    imageUrl: { type: String, required: true },
+    url: { type: String },
+    path: { type: String, required: true },
     expirationTime: { type: Date, default: null },
-    imageName: String,
     duration: { type: Number, default: null },
+    key: { type: String },
+    fileType: { type: String },
   },
   { timestamps: true }
 );

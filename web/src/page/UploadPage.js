@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PageContainer from "../components/shared/PageContainer";
 import axios from "axios";
 import DropZone from "../components/shared/DropZone";
@@ -21,10 +21,14 @@ const UploadPage = () => {
     setExpirationTime(parseInt(e.target.value));
   };
 
+  async function imageToBuffer(image) {
+    return await (await fetch(image)).blob();
+  }
+
   const handleUpload = async () => {
     try {
       const formData = new FormData();
-      formData.append("image", file);
+      formData.append("file", file);
       formData.append("expirationTime", expirationTime);
       setLoading(true);
       const response = await axios.post(
@@ -37,9 +41,10 @@ const UploadPage = () => {
         }
       );
 
-      setImageUrl(response.data.imageUrl);
+      setImageUrl(response.data);
       setIsOpen(false);
       setLoading(false);
+      console.log(response);
     } catch (error) {
       console.error("Error uploading image:", error);
       setLoading(false);
@@ -73,7 +78,7 @@ const UploadPage = () => {
             <div className="max-h-[300px] h-full w-full max-w-[300px]">
               <div className="h-full w-full overflow-hidden">
                 <img
-                  src={imageUrl}
+                  src={imageUrl.image}
                   alt="Uploaded"
                   className="w-full h-full object-contain"
                 />
@@ -85,7 +90,8 @@ const UploadPage = () => {
                 <div className="space-y-2 w-fit">
                   <label>Generated image URL</label>
                   <div className="flex flex-wrap gap-5 items-center bg-gray-100 p-3 rounded-lg text-gray-700">
-                    <p className="break-all">{imageUrl}</p>
+                    <p className="break-all">{imageUrl.image}</p>
+                    <p className="break-all">{imageUrl.previewImage}</p>
                     <button
                       className="bg-blue-500 text-white py-1 px-3 rounded-md"
                       onClick={() => copyToClipboard(imageUrl)}
@@ -98,7 +104,7 @@ const UploadPage = () => {
                 <div className="space-y-2">
                   <label>Embedded HTML</label>
                   <div className="flex flex-wrap gap-5 items-center bg-gray-100 p-3 rounded-lg text-gray-700 overflow-x-auto">
-                    <p className="break-words">{` <img src="${imageUrl}"/>`}</p>
+                    <p className="break-words">{` <img src="${imageUrl.image}"/>`}</p>
                   </div>
                 </div>
               </div>

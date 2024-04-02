@@ -15,7 +15,7 @@ const deletePhotoAuto = () => {
         expiredPhotos.forEach((ep) => console.log(ep.expirationTime > new Date()));
 
       expiredPhotos.forEach(async (ep) => {
-        result = await deletePhotoHandler(ep._id);
+        result = await deletePhotoHandler(ep.key);
         console.log("result", result);
       });
 
