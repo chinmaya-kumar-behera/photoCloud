@@ -45,12 +45,13 @@ Make sure you have the following installed:
    git clone https://github.com/your-username/photocloud.git
 
 Navigate to the project directory
-sh cd photocloud
-
-sh cd client
-npm install
-cd ../server
-npm install
+   ```sh
+   cd photocloud
+   
+   sh cd client
+   npm install
+   cd ../server
+   npm install
 
 
 Set up your environment variables
@@ -66,7 +67,7 @@ Open two terminal windows or tabs:
 
 In the first terminal window, navigate to the server directory and run the backend server:
 
-sh cd server
+cd server
 npm start
 
 cd client
@@ -77,6 +78,6 @@ Open your browser
 Open http://localhost:3000 to view the application.
 
 Contact
-Your Name - @your-twitter-handle - your-email@example.com
+Your Name - @[twitter](https://twitter.com/chinmayakumar27) - official.chinu2127@example.com
 
-Project Link: https://github.com/your-username/photocloud
+Project Link: https://
