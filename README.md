@@ -97,5 +97,3 @@ Open http://localhost:3000 to view the application.
 
 Contact
 Your Name - @[twitter](https://twitter.com/chinmayakumar27) - official.chinu2127@example.com
-
-Project Link: https://
