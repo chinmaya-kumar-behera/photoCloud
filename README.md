@@ -43,11 +43,13 @@ Make sure you have the following installed:
 
    ```sh
    git clone https://github.com/your-username/photocloud.git
+   
 
 Navigate to the project directory
 
    ```sh
    cd photocloud
+   ```
    
    sh cd client
    npm install
@@ -58,7 +60,9 @@ Set up your environment variables
 
 Create a .env file in the server directory and add your MongoDB URI and any other required environment variables.
 
+```sh
 MONGO_URI=your_mongodb_uri
+```
 
 
 Run the application
@@ -66,12 +70,15 @@ Run the application
 Open two terminal windows or tabs:
 
 In the first terminal window, navigate to the server directory and run the backend server:
-
+```sh
 cd server
 npm start
+```
 
+```sh
 cd client
 npm start
+```
 
 Open your browser
 
