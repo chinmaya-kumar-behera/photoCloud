@@ -45,6 +45,7 @@ Make sure you have the following installed:
    git clone https://github.com/your-username/photocloud.git
 
 Navigate to the project directory
+
    ```sh
    cd photocloud
    
@@ -52,7 +53,6 @@ Navigate to the project directory
    npm install
    cd ../server
    npm install
-
 
 Set up your environment variables
 
