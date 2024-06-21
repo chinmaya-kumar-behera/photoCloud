@@ -74,7 +74,7 @@ MONGO_URI=your_mongodb_uri
 ```
 
 
-Run the application
+#Run the application
 
 Open two terminal windows or tabs:
 
