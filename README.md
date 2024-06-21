@@ -57,11 +57,15 @@ Navigate to the project directory
    ```sh
    cd photocloud
    ```
-   
-   sh cd client
+
+    ```sh
+   cd client
    npm install
+   ```
+   ```sh
    cd ../server
    npm install
+   ```
 
 Set up your environment variables
 
