@@ -10,10 +10,6 @@ PhotoCloud is a fully MERN stack web app that allows users to generate image lin
 - **Smooth User Experience**: Utilizes TailwindCSS for a smooth and responsive user interface.
 - **Dynamic URL Generation**: Dynamically generates remote image URLs for specific time periods, utilizing HTML `<img>` tags with dynamic `src` attributes linked to server endpoints. This enables developers to embed images in web applications seamlessly.
 
-- ![image](https://github.com/chinmaya-kumar-behera/photoCloud/assets/101429530/635d27ec-2a7d-4300-9f77-9989e13c4840)
-- ![image](https://github.com/chinmaya-kumar-behera/photoCloud/assets/101429530/d2819d0a-55ab-4131-b822-e4fe6cf4bfd3)
-
-
 
 
 ## Live Demo
@@ -22,7 +18,9 @@ PhotoCloud is a fully MERN stack web app that allows users to generate image lin
 
 ## Screenshots
 
-Add some screenshots of your application here.
+- ![image](https://github.com/chinmaya-kumar-behera/photoCloud/assets/101429530/635d27ec-2a7d-4300-9f77-9989e13c4840)
+- ![image](https://github.com/chinmaya-kumar-behera/photoCloud/assets/101429530/d2819d0a-55ab-4131-b822-e4fe6cf4bfd3)
+
 
 ## Tech Stack
 
