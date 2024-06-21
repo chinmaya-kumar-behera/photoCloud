@@ -45,7 +45,7 @@ Make sure you have the following installed:
 
 ### Installation Steps
 
-1. **Clone the repo**
+**Clone the repo**
 
    ```sh
    git clone https://github.com/your-username/photocloud.git
@@ -58,7 +58,7 @@ Navigate to the project directory
    cd photocloud
    ```
 
-    ```sh
+   ```sh
    cd client
    npm install
    ```
